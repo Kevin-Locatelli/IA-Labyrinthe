@@ -1,7 +1,7 @@
 {
   "name": "ia-labyrinthe",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "login.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,6 +16,11 @@
   },
   "homepage": "https://github.com/Kevin-Locatelli/IA-Labyrinthe#readme",
   "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "pathfinding": "^0.4.18"
+  },
+  "devDependencies": {},
     "abbrev": "^1.1.1",
     "accepts": "^1.3.8",
     "anymatch": "^3.1.3",
