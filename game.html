@@ -1,40 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Pathfinding.js Interface</title>
-  <script type="text/javascript" src="./pathfinding-browser.min.js"></script>
-  <script type="text/javascript" src="./script/game.js"></script>
-  <style>
-    /* styles CSS */
-  </style>
+    <title>Pathfinding.js Example</title>
+    <link rel="stylesheet" href="main.css">
 </head>
-<body>
-<header>
-  <h1>Pathfinding.js Interface</h1>
-</header>
-<main>
-  <section>
-    <label for="gridSize">Grid Size:</label>
-    <input type="number" id="gridSize" min="1" max="100" value="10">
-    <button id="createGridBtn">Create Grid</button>
-  </section>
-  <section>
-    <h2>Start and End Points</h2>
-    <label for="startX">Start X:</label>
-    <input type="number" id="startX" min="1" max="100" value="1">
-    <label for="startY">Start Y:</label>
-    <input type="number" id="startY" min="1" max="100" value="1">
-    <label for="endX">End X:</label>
-    <input type="number" id="endX" min="1" max="100" value="10">
-    <label for="endY">End Y:</label>
-    <input type="number" id="endY" min="1" max="100" value="10">
-    <button id="findPathBtn">Find Path</button>
-  </section>
-  <section>
-    <h2>Pathfinding Results</h2>
-    <div id="pathfindingResults"></div>
-  </section>
-</main>
+<body width="100%" height="100%">
+<div id="container">
+</div>
+<button id="depart">Point de départ</button>
+<button id="arriver">Point d'arriver</button>
+<button id="start">Start</button>
+<button id="reset">Reset</button>
+
+<script src="./pathfinding-browser.js"></script>
+<script src="./game.js"></script>
 </body>
 </html>
+
