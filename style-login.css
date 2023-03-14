@@ -1,0 +1,96 @@
+html{
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-size: 100% 100%;
+    background-image: radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%),radial-gradient(112% 91% at 17% -2%, #FF5A00FF 1%, #FF000000 99%),radial-gradient(142% 91% at 83% 7%, #FFDB00FF 1%, #FF000000 99%),radial-gradient(142% 91% at -6% 74%, rgb(255, 0, 30) 1%, #FF000000 99%),radial-gradient(142% 91% at 111% 84%, #FF7000FF 0%, #FF0000FF 100%);
+    font-size: 16px;
+    font-family: Roboto, sans-serif ;
+
+}
+.card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5) ;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 15px;
+}
+.card h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+.card .user-box{
+    position: relative;
+}
+.card .user-box input{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.card .user-box label   {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+label{
+    color: #fff;
+    font-family: Roboto, sans-serif ;
+    
+}
+.card .user-box input:focus ~ label,
+.card .user-box input:valid ~ label{
+    top: -20px;
+    left: 0;
+    color: #fff;
+    font-size: 12px;
+}
+.card form #send{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+}
+.card #send:hover{
+    background: #fff;
+    color: #000;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff,
+    0 0 25px #fff,
+    0 0 50px #fff,
+    0 0 10px #fff;
+}
+
+#send{
+    font-family: Roboto, sans-serif ;
+    background: none;
+    border: none;
+}
