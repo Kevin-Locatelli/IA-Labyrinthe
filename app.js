@@ -7,8 +7,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
 
-
-
     let matrix = [
         [0, 0, 0, 1, 0],
         [1, 0, 0, 0, 1],
