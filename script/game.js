@@ -3,9 +3,9 @@ document.createSvg = function(tagName) {
     return this.createElementNS(svgNS, tagName);
 };
 
-let numberPerSide = 20;
-let size = 10;
-let pixelsPerSide = 400;
+const numberPerSide = 50;
+const size = 9;
+const pixelsPerSide = 900;
 
 
 
@@ -43,7 +43,7 @@ let grid = function(numberPerSide, size, pixelsPerSide, colors) {
 };
 
 let container = document.getElementById("container");
-container.appendChild(grid(5, 10, 200, ["red", "white"]));
+container.appendChild(grid(numberPerSide, size, pixelsPerSide, ["black", "white"]));
 
 
 
