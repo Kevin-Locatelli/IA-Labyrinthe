@@ -96,12 +96,18 @@ let container = document.getElementById("container");
 container.appendChild(grid(numberPerSide, size, pixelsPerSide, ["white"]));
 
 document.getElementById("depart").addEventListener("click", function() {
-    depart = 1;
+    if(depart == 0)
+        depart = 1;
+    else
+        depart = 0;
 
 });
 
 document.getElementById("arriver").addEventListener("click", function() {
-    arrive = 1;
+    if(arrive == 0)
+        arrive = 1;
+    else
+        arrive = 0;
 
 });
 document.getElementById("start").addEventListener("click", function() {
