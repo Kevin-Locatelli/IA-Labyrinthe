@@ -71,8 +71,6 @@ let grid = function(numberPerSide, size, pixelsPerSide, colors) {
             }
             else if(depart == 1) {
                 Tcase.setAttribute("fill", "green");
-                console.log(Tcase.id)
-                console.log(numberY, numberX);
                 tab[numberY][numberX] = 0;
                 departX = numberX;
                 departY = numberY;
@@ -109,14 +107,14 @@ document.getElementById("arriver").addEventListener("click", function() {
     else
         arrive = 0;
 
+    console.log(tab)
+
 });
 document.getElementById("start").addEventListener("click", function() {
 
     const grid = new PF.Grid(tab);
     const finder = new PF.AStarFinder();
-    console.log(departY, departX, arriveY, arriveX);
     const path = finder.findPath(departX, departY, arriveX, arriveY, grid);
-    console.log(path);
     for(let i = 1; i < path.length-1; i++) {
         let id;
         if(path[i][1] < 10)
@@ -134,4 +132,43 @@ document.getElementById("start").addEventListener("click", function() {
 
 document.getElementById("reset").addEventListener("click", function() {
     window.location.reload();
+});
+
+document.getElementById("default").addEventListener("click", function() {
+    tab = [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ];
+    departY = 7;
+    departX = 5;
+    arriveY = 9;
+    arriveX = 8;
+    for (let numberY = 0; numberY < tab.length; numberY++) {
+        for (let numberX = 0; numberX < tab[numberY].length; numberX++) {
+            let id = (numberY > 9 ? numberY.toString() : numberY + '-') + (numberX > 9 ? numberX.toString() : numberX + '-');
+            Tcase = document.getElementById(id);
+            Tcase.setAttribute("fill", tab[numberY][numberX] == 0 ? numberX == departX && numberY == departY ? "green" :
+                    numberX == arriveX && numberY == arriveY ? "red" :
+                    "white" :
+                    "blue");
+        }
+    }
 });
