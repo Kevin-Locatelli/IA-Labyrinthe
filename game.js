@@ -57,7 +57,7 @@ let grid = function(numberPerSide, size, pixelsPerSide, colors) {
             if (Tcase.id.slice(3, 4) != '-')
                 numberX = Tcase.id.slice(2, 4);
 
-            if(depart == 0 && arrive == 0) {
+            if(!depart && !arrive) {
                 if (Tcase && Tcase.getAttribute("fill") != "blue") {
                     Tcase.setAttribute("fill", "blue");
                     tab[numberY][numberX] = 1;
@@ -69,7 +69,7 @@ let grid = function(numberPerSide, size, pixelsPerSide, colors) {
                     }
                 }
             }
-            else if(depart == 1) {
+            else if(depart) {
                 Tcase.setAttribute("fill", "green");
                 tab[numberY][numberX] = 0;
                 departX = numberX;
