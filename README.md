@@ -5,7 +5,7 @@
 Pour télécharger le projet il vous suffit de faire
 - `git clone https://github.com/Kevin-Locatelli/IA-Lab`
 - `npm i`
-- Ouvrir le fichier home.html
+- Ouvrir le fichier index.html
 
 ### Technologie
 - JS
